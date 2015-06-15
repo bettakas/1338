@@ -8,11 +8,11 @@ define('POMF_DB_USER', 'pomf');
 define('POMF_DB_PASS', '***');
 
 // Root location of files
-define('POMF_FILES_ROOT', '/mnt/disk1/pomf/files/');
+define('POMF_FILES_ROOT', '/home/www-data/1338ul/');
 // Maximum number of iterations while generating a new name
 define('POMF_FILES_RETRIES', 15);
 // URL to prepend to output (include trailing slash)
-define('POMF_URL', 'http://a.pomf.se/');
+define('POMF_URL', 'http://a.1339.cf/');
 
 $doubledots = array_map('strrev', array(
 	'tar.gz',
