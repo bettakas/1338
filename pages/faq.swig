@@ -1,28 +1,20 @@
 {% extends "layout.swig" %}
 
-{% block title %}FAQ{% endblock %}
+{% block title %}obligatory infopage{% endblock %}
 {% block body %}
 <div class="jumbotron">
-<h1>FAQ</h1>
-{% include "nav.swig" %}
+<h1>Infos</h1>
+The old domain 1338.cf got deleted because of the shit some people uploaded, so here's some info about things
 </div>
 <ul>
-	<li>Pomf does NOT support Internet Explorer and older versions of Firefox, Chrome, Opera and Safari.</li>
-	<li>Uploading tools for Pomf can be found at <a href="tools.html">Tools</a>.</li>
-	<li>Max file size is 50MiB, hopefully I won't have to change this to a even lower number. (read: don't be an ass).</li>
-	<li>No Child porn, anything else goes until I get a lawsuit I guess. (unless its a virus, because that goes into the being an ass category).</li>
-	<li>All filetypes are allowed, ALL! (gif,exe,jpg,rar,ass,srt,etc,etc).</li>
-	<li>Any file can be removed or replaced at any time for any reason.</li>
-	<li>No logs are kept, no logs over uploading nor over downloading. This can be temp enabled to stop certain spamming (read: child porn or such).</li>
-	<li>a/i/pomf.se is hosted as for now on 500mbit server and Cloudflare's CDN helps out a lot, I'm on a restrained budget and this costs a lot so please don't be an ass.</li>
-	<li>I want to deliver the best free service I can without ads or such so donations are very welcome via the donate button on the front page (pomf.se).</li>
-	<li>Viruses will be removed if detected most of the time, this is to not cause further damage in form of i/a/pomf.se ending up on blacklists and whatnot. (read: IT ALREADY FUCKING IS!).</li>
-	<li>For removal of a file or such contact me at neku@pomf.se or pixel@pomf.se</li>
-	<li>We also have a mail newsletter thingy which you can sign-up at <a href="http://t.co/AyrLb4GWfO" TARGET="_BLANK">here!</a></li>
+	<li>Do not upload your CP, viruses or whatever shit you might want to upload here, I'll delete it!</li>
+	<li>1339.cf is supposed to be a temporary solution, I might buy a new domain but I'm not sure about the TLD and stuff -  there will definitely be a redirect if there is a new one</li>
+	<li>I do not log IPs or something like that and do not track site usage via botnet scripts, therefore you can take off your tinfoil hats</li>
 </ul>
 <p>
-<b>Follow the rules and tips I have set up above, please. The FAQ may also be changed and updated at any time.<br />
-Go to <a href="http://blog.pomf.se">the Pomf Blog</a> or <a href="http://twitter.com/nekunekus">Twitter</a> for more information.</b>
+<p>tl;dr don't be an asshole and have fun sharing your waifu pics as much as I have</p>
+<p>For questions regarding the site and file deletions, contact me at bohr[at]cock.li</p>
+<p><a href="http://1339.cf/">back to 1339.cf</a>
 </p>
 {% include "banners.swig" %}
 {% endblock %}

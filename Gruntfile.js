@@ -16,9 +16,10 @@ module.exports = function (grunt) {
 				src: [
 					'index.swig',
 					'faq.swig',
-					'tools.swig'
+					'tools.swig',
+					'nav.swig'
 				],
-				siteUrl: 'http://pomf.se/',
+				siteUrl: 'http://1339.cf/',
 				production: false,
 			}
 		},

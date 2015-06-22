@@ -22,7 +22,8 @@ $images = array(
 	'img/20.png',
 	'img/21.png',
 	'img/22.png',
-	'img/23.png'
+	'img/23.png',
+	'img/24.png'
 );
 if (headers_sent() === false) {
 	header('Location: ' . $images[array_rand($images)], true, 303);

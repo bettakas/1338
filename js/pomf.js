@@ -124,9 +124,9 @@ $(function () {
 					eachRow(res.files, function (row, file, files) {
 						var link = $('<a>')
 
-						link.attr('href', 'http://a.pomf.se/' + file.url)
+						link.attr('href', 'http://a.1339.cf/' + file.url)
 							.attr('target', '_BLANK')
-							.text('a.pomf.se/' + file.url)
+							.text('a.1339.cf/' + file.url)
 
 						$('.file-url', row).append(link)
 					})
