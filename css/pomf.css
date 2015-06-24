@@ -92,14 +92,14 @@ a:focus {
 	transition: width .5s, margin .5s, padding .5s, background-color .5s
 }
 .alert-error {
-	background-color: #F2DEDE;
-	border-color: #EED3D7;
-	color: #B94A48
+	background-color: #411D19;
+	border-color: #C64333;
+	color: #f5f5f5;
 }
 .alert-info {
-	background-color: #D9EDF7;
-	border-color: #BCE8F1;
-	color: #3A87AD
+	background-color: #222;
+	border-color: #F5F5F5;
+	color: #F5F5F5;
 }
 span.donate-btns {
 	display: block;
@@ -110,18 +110,18 @@ a.donate-btn {
 	height: 26px;
 	display: inline-block;
 	margin: 2px 5px;
-	background: #f2f2f2;
+	background: #DD4B39;
 	line-height: 16px;
 	padding: 3px 8px 3px 24px;
 	border-radius: 3px;
-	color: #3f3f3f;
-	border: 1px solid #d8d8d8;
-	transition: all .2s
+	color: #F5F5F5;
+	border: 1px solid #B13627;
+	transition: all .2s;
 }
 a.donate-btn:hover {
-	color: #000;
-	border: 1px solid #b2b2b2;
-	background-color: #ccc
+	color: #f5f5f5;
+	border: #C64333;
+	background-color: #C64333;
 }
 .icon {
 	display: block;
