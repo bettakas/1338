@@ -146,3 +146,7 @@ $(function () {
 		up.upload()
 	})
 })
+
+function moon() {
+    document.getElementById("ohayou").innerHTML = "お早う!";
+}

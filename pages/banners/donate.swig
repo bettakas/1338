@@ -1,5 +1,5 @@
 <p class="alert alert-info">
-	<strong>
+	<strong>Donations are shittu~~
 	<span class="donate-btns">
 		<a class="donate-btn donate-paypal" href="" target="_BLANK">
 			<span class="icon icon-paypal"></span>

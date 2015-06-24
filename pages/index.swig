@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="jumbotron">
-	<h1>Ohay&#x14D;!</h1>
+	<h1 onclick="moon()" id="ohayou">Ohay&#x14D;!</h1>
 	<p class="lead">still up and running, serving your favourite 100MiB</p>
 	{% include "check_script.swig" %}
 	{% include "check_fileapi.swig" %}
