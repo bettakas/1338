@@ -41,7 +41,7 @@ function generate_name ($file) {
 
 		$chars = 'abcdefghijklmnopqrstuvwxyz';
 		$name  = '';
-		for ($i = 0; $i < 6; $i++) {
+		for ($i = 0; $i < 7; $i++) {
 			$name .= $chars[mt_rand(0, 25)];
 			// $chars string length is hardcoded, should use a variable to store it?
 		}

@@ -123,10 +123,11 @@ $(function () {
 					}
 					eachRow(res.files, function (row, file, files) {
 						var link = $('<a>')
-
-						link.attr('href', 'http://a.1339.cf/' + file.url)
+						var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
+						var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
+						link.attr('href', 'http://'+fucktwitter+'/' + file.url)
 							.attr('target', '_BLANK')
-							.text('a.1339.cf/' + file.url)
+							.text(fucktwitter+'/' + file.url)
 
 						$('.file-url', row).append(link)
 					})
