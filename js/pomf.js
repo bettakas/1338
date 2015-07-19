@@ -129,7 +129,14 @@ $(function () {
 							.attr('target', '_BLANK')
 							.text(fucktwitter+'/' + file.url)
 
+						var steamlink = $('<a>')
+						steamlink.attr('href', 'http://a.1336.cf/' + file.url)
+							.attr('target', '_BLANK')
+							.text('Steam Link')
+
 						$('.file-url', row).append(link)
+						$('.file-url', row).append(' &middot; ')
+						$('.file-url', row).append(steamlink)
 					})
 					uploadFiles.addClass('completed')
 					totalName.text('Done!')
@@ -150,4 +157,8 @@ $(function () {
 
 function moon() {
     document.getElementById("ohayou").innerHTML = "お早う!";
+}
+
+function steam() {
+
 }
