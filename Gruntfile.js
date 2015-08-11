@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 						'js/zepto.js',
 						'js/cheesesteak.js',
 						'js/cabinet.js',
-						'js/pomf.js'
+						'js/pomf.js',
 						'node_modules/zeroclipboard/dist/ZeroClipboard.js'
 					]
 				}
