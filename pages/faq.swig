@@ -14,7 +14,7 @@
 </ul>
 <p>
 <p>tl;dr don't be an asshole and have fun sharing your waifu pics as much as I have</p>
-<p>For questions regarding the site and file deletions or love letters, contact me at <a href="mailto:bohr@cock.li">bohr@cock.li</a></p>
+<p>For questions regarding the site and file deletions or love letters, contact me at <a href="mailto:bohr@cock.li">bohr@cock.li</a>.</p>
 <p><a href="http://1339.cf/">back to 1339.cf</a>
 </p>
 {% include "banners.swig" %}
