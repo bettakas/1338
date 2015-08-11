@@ -51,8 +51,17 @@ module.exports = function (grunt) {
 						'js/cheesesteak.js',
 						'js/cabinet.js',
 						'js/pomf.js'
+						'node_modules/zeroclipboard/dist/ZeroClipboard.js'
 					]
 				}
+			}
+		},
+		copy: {
+			dist: {
+				files: [{
+					src: 'node_modules/zeroclipboard/dist/ZeroClipboard.swf',
+					dest: 'dist/'
+				}]
 			}
 		},
 		cssmin: {
@@ -62,7 +71,8 @@ module.exports = function (grunt) {
 			dist: {
 				files: {
 					'dist/pomf.min.css': [
-						'css/pomf.css'
+						'css/pomf.css',
+						'css/font-awesome.css'
 					]
 				}
 			}
@@ -90,6 +100,22 @@ module.exports = function (grunt) {
 					cwd: 'static/',
 					src: '**',
 					dest: 'dist/'
+				}]
+			}
+		},
+		mkdir: {
+			options: {
+				mode: 0700,
+				create: ['dist/fonts']
+			}
+		},
+		copy: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'fonts/',
+					src: '**',
+					dest: 'dist/fonts'
 				}]
 			}
 		}

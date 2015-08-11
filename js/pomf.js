@@ -74,7 +74,14 @@ $(function () {
 		var files = uploadInput[0].filelist;
 
 		files.forEach(function (file) {
-			createRow(file.name, file.humanSize).appendTo(uploadFiles)
+			if (file.name){
+				createRow(file.name, file.humanSize).appendTo(uploadFiles)
+			}else{
+				uploadFiles.addClass('error')
+				$('.file-name', totalRow).text('uploading .exe files is blocked due to abuse')
+				return
+			}
+			
 		})
 
 		var totalRow = createRow('', files.humanSize, 'total')
@@ -123,13 +130,22 @@ $(function () {
 					}
 					eachRow(res.files, function (row, file, files) {
 						var link = $('<a>')
-						var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
-						var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
+						//var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
+						//var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
+						var fucktwitter = 'b.1339.cf' //So caching doesn't go to hell, thanks Wub
 						link.attr('href', 'http://'+fucktwitter+'/' + file.url)
 							.attr('target', '_BLANK')
 							.text(fucktwitter+'/' + file.url)
 
+						var client = new ZeroClipboard()
+						client.on( 'copy', function (event) {
+						  	var clipboard = event.clipboardData
+						  	clipboard.setData( 'text/plain', 'http://'+fucktwitter+'/' + file.url)
+						  	clipboard.setData( 'text/html', ' - <i class="fa fa-link"></i>')
+						})
+
 						$('.file-url', row).append(link)
+						$('.file-url', row).append(client)
 					})
 					uploadFiles.addClass('completed')
 					totalName.text('Done!')
@@ -150,8 +166,4 @@ $(function () {
 
 function moon() {
     document.getElementById("ohayou").innerHTML = "お早う!";
-}
-
-function steam() {
-
 }
