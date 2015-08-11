@@ -56,14 +56,6 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		copy: {
-			dist: {
-				files: [{
-					src: 'node_modules/zeroclipboard/dist/ZeroClipboard.swf',
-					dest: 'dist/'
-				}]
-			}
-		},
 		cssmin: {
 			options: {
 				banner: '/*! <%= pkg.name %> (<%= pkg.repository.url %>) @ <%= grunt.template.today("yyyy-mm-dd") %> */\n\n'
@@ -100,22 +92,6 @@ module.exports = function (grunt) {
 					cwd: 'static/',
 					src: '**',
 					dest: 'dist/'
-				}]
-			}
-		},
-		mkdir: {
-			options: {
-				mode: 0700,
-				create: ['dist/fonts']
-			}
-		},
-		copy: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: 'fonts/',
-					src: '**',
-					dest: 'dist/fonts'
 				}]
 			}
 		}
