@@ -74,7 +74,14 @@ $(function () {
 		var files = uploadInput[0].filelist;
 
 		files.forEach(function (file) {
-			createRow(file.name, file.humanSize).appendTo(uploadFiles)
+			if (file.name){
+				createRow(file.name, file.humanSize).appendTo(uploadFiles)
+			}else{
+				uploadFiles.addClass('error')
+				$('.file-name', totalRow).text('uploading .exe files is blocked due to abuse')
+				return
+			}
+			
 		})
 
 		var totalRow = createRow('', files.humanSize, 'total')
@@ -113,6 +120,7 @@ $(function () {
 		})
 
 		up.on('load', function (e, res) {
+			var shit = 0
 			switch (e.target.status) {
 				case 200:
 					var res = JSON.parse(res)
@@ -123,13 +131,24 @@ $(function () {
 					}
 					eachRow(res.files, function (row, file, files) {
 						var link = $('<a>')
-						var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
-						var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
+						//var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
+						//var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
+						var fucktwitter = 'b.1339.cf' //So caching doesn't go to hell, thanks Wub
 						link.attr('href', 'http://'+fucktwitter+'/' + file.url)
 							.attr('target', '_BLANK')
 							.text(fucktwitter+'/' + file.url)
-
 						$('.file-url', row).append(link)
+
+						var copycat = "<button id='copycat"+shit+"' class='copycat fa fa-link' data-clipboard-text='http://" + fucktwitter + "/" + file.url + "'></button>"
+						
+						$('.file-url', row).append(copycat)
+						var clip = new ZeroClipboard(document.getElementById('copycat'+shit))
+						clip.on('ready', function(readyEvent) {
+						  clip.on('aftercopy', function(event) {
+						    //popup pls
+						  })
+						})
+						shit++
 					})
 					uploadFiles.addClass('completed')
 					totalName.text('Done!')
@@ -148,10 +167,7 @@ $(function () {
 	})
 })
 
+
 function moon() {
     document.getElementById("ohayou").innerHTML = "お早う!";
-}
-
-function steam() {
-
 }

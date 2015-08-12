@@ -50,7 +50,8 @@ module.exports = function (grunt) {
 						'js/zepto.js',
 						'js/cheesesteak.js',
 						'js/cabinet.js',
-						'js/pomf.js'
+						'js/pomf.js',
+						'js/ZeroClipboard.js'
 					]
 				}
 			}
@@ -62,7 +63,8 @@ module.exports = function (grunt) {
 			dist: {
 				files: {
 					'dist/pomf.min.css': [
-						'css/pomf.css'
+						'css/pomf.css',
+						'css/font-awesome.css'
 					]
 				}
 			}
