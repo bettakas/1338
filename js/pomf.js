@@ -167,7 +167,8 @@ $(function () {
 	})
 })
 
-
 function moon() {
-    document.getElementById("ohayou").innerHTML = "お早う!";
+	var ohayou = document.getElementById("ohayou")
+    ohayou.innerHTML = "お早う!"
+    ohayou.lang = "jp"
 }
