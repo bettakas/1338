@@ -20,7 +20,7 @@ module.exports = function (grunt) {
 					'nav.swig',
 					'404.swig'
 				],
-				siteUrl: 'http://test.1339.cf/',
+				siteUrl: 'http://1339.cf/',
 				production: false,
 			}
 		},
