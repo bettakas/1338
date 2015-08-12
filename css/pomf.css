@@ -21,6 +21,14 @@ body {
 	padding-top: 20px;
 	padding-bottom: 40px
 }
+button {
+	border-radius: 2px;
+	border-width: 1px;
+	color: #F5F5F5;
+	border-color: #222;
+	background-color: #222;
+	margin-left: 10px;
+}
 .container {
 	margin: 0 auto;
 	max-width: 700px
@@ -279,7 +287,7 @@ section.ded {
 		padding-right: 20px
 	}
 	#upload-filelist {
-		background-color: #222
+		background-color: #222;
 		overflow: hidden
 	}
 	#upload-filelist>li.file {

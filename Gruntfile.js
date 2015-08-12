@@ -20,7 +20,7 @@ module.exports = function (grunt) {
 					'nav.swig',
 					'404.swig'
 				],
-				siteUrl: 'http://1339.cf/',
+				siteUrl: 'http://test.1339.cf/',
 				production: false,
 			}
 		},
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 						'js/cheesesteak.js',
 						'js/cabinet.js',
 						'js/pomf.js',
-						'node_modules/zeroclipboard/dist/ZeroClipboard.js'
+						'js/ZeroClipboard.js'
 					]
 				}
 			}

@@ -120,6 +120,7 @@ $(function () {
 		})
 
 		up.on('load', function (e, res) {
+			var shit = 0
 			switch (e.target.status) {
 				case 200:
 					var res = JSON.parse(res)
@@ -136,16 +137,18 @@ $(function () {
 						link.attr('href', 'http://'+fucktwitter+'/' + file.url)
 							.attr('target', '_BLANK')
 							.text(fucktwitter+'/' + file.url)
-
-						var client = new ZeroClipboard()
-						client.on( 'copy', function (event) {
-						  	var clipboard = event.clipboardData
-						  	clipboard.setData( 'text/plain', 'http://'+fucktwitter+'/' + file.url)
-						  	clipboard.setData( 'text/html', ' - <i class="fa fa-link"></i>')
-						})
-
 						$('.file-url', row).append(link)
-						$('.file-url', row).append(client)
+
+						var copycat = "<button id='copycat"+shit+"' class='copycat fa fa-link' data-clipboard-text='http://" + fucktwitter + "/" + file.url + "'></button>"
+						
+						$('.file-url', row).append(copycat)
+						var clip = new ZeroClipboard(document.getElementById('copycat'+shit))
+						clip.on('ready', function(readyEvent) {
+						  clip.on('aftercopy', function(event) {
+						    //popup pls
+						  })
+						})
+						shit++
 					})
 					uploadFiles.addClass('completed')
 					totalName.text('Done!')
@@ -163,6 +166,7 @@ $(function () {
 		up.upload()
 	})
 })
+
 
 function moon() {
     document.getElementById("ohayou").innerHTML = "お早う!";

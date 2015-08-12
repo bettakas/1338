@@ -3,7 +3,7 @@
 {% block body %}
 <div class="jumbotron">
 	<h1 onclick="moon()" id="ohayou">Ohay&#x14D;!</h1>
-	<p class="lead">No Limits - Except you're above 100MiB</p>
+	<p class="lead">100MiB's the Limit</p>
 	{% include "check_script.swig" %}
 	{% include "check_fileapi.swig" %}
 	{% include "upload_form.swig" %}
