@@ -169,6 +169,6 @@ $(function () {
 
 function moon() {
 	var ohayou = document.getElementById("ohayou")
-    ohayou.innerHTML = "お早う!"
+    ohayou.innerHTML = "<ruby>おはよう! <rp>(</rp><rt>Ohayo!</rt><rp>)</rp></ruby>"
     ohayou.lang = "jp"
 }
