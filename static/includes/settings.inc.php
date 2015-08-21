@@ -12,7 +12,7 @@ define('POMF_FILES_ROOT', '/home/www-data/1338ul/');
 // Maximum number of iterations while generating a new name
 define('POMF_FILES_RETRIES', 15);
 // URL to prepend to output (include trailing slash)
-define('POMF_URL', 'http://a.1339.cf/');
+define('POMF_URL', 'https://b.1339.cf/');
 
 $doubledots = array_map('strrev', array(
 	'tar.gz',
