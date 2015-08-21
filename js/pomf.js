@@ -139,7 +139,7 @@ $(function () {
 							.text(fucktwitter+'/' + file.url)
 						$('.file-url', row).append(link)
 
-						var copycat = "<button id='copycat"+shit+"' class='copycat fa fa-link' data-clipboard-text='http://" + fucktwitter + "/" + file.url + "'></button>"
+						var copycat = "<button id='copycat"+shit+"' class='copycat ion-link' data-clipboard-text='http://" + fucktwitter + "/" + file.url + "'></button>"
 						
 						$('.file-url', row).append(copycat)
 						var clip = new ZeroClipboard(document.getElementById('copycat'+shit))
@@ -165,10 +165,10 @@ $(function () {
 		})
 		up.upload()
 	})
-})
+}&#x14D;
 
 function moon() {
 	var ohayou = document.getElementById("ohayou")
-    ohayou.innerHTML = "<ruby>おはよう! <rp>(</rp><rt>Ohayo!</rt><rp>)</rp></ruby>"
+    ohayou.innerHTML = "<ruby>おはよう! <rp>(</rp><rt>Ohay&#x14D;;!</rt><rp>)</rp></ruby>"
     ohayou.lang = "jp"
 }

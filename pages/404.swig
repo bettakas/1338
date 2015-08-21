@@ -4,6 +4,6 @@
 <div class="jumbotron">
 <h1>404</h1>
 </div>
-<p><a href="http://1339.cf/">back to 1339.cf</a>
+<p><a href="/">back to 1339.cf</a>
 </p>
 {% endblock %}

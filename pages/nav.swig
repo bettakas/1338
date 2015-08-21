@@ -1,8 +1,8 @@
 <nav>
 	<ul>
-	<li><a href="http://1339.cf/faq.html"><i class="fa fa-fw fa-info"></i></a></li>
-	<li><a href="http://1339.cf/tools.html"><i class="fa fa-fw fa-wrench"></i></a></li>
-	<li><a href="https://github.com/bohrmeista/1338"><i class="fa fa-fw fa-github"></i></a></li>
-	<li><a href="https://twitter.com/bohrmeista"><i class="fa fa-fw fa-twitter"></i></i></a></li>
+	<li><a href="/faq.html"><i class="icon ion-help-circled"></i></a></li>
+	<li><a href="/tools.html"><i class="icon ion-wand"></i></a></li>
+	<li><a href="https://github.com/bohrmeista/1338"><i class="icon ion-social-twitter"></i></a></li>
+	<li><a href="https://twitter.com/bohrmeista"><i class="icon ion-social-github"></i></i></a></li>
 	</ul>
 </nav>

@@ -64,7 +64,7 @@ module.exports = function (grunt) {
 				files: {
 					'dist/pomf.min.css': [
 						'css/pomf.css',
-						'css/font-awesome.css'
+						'css/ionicons.css'
 					]
 				}
 			}
