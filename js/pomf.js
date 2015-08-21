@@ -165,7 +165,7 @@ $(function () {
 		})
 		up.upload()
 	})
-}&#x14D;
+}
 
 function moon() {
 	var ohayou = document.getElementById("ohayou")
