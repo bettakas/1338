@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<html lang="en">
 	<title>&middot; 1339.CF &middot;</title>
 	<link rel="shortcut icon" href=favicon.ico type="image/x-icon">
 	<link rel="stylesheet" href="pomf.min.css">

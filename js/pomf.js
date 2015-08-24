@@ -131,15 +131,12 @@ $(function () {
 					}
 					eachRow(res.files, function (row, file, files) {
 						var link = $('<a>')
-						//var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
-						//var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
-						var fucktwitter = 'b.1339.cf' //So caching doesn't go to hell, thanks Wub
-						link.attr('href', 'https://'+fucktwitter+'/' + file.url)
+						link.attr('href', 'http://b.1339.cf/' + file.url)
 							.attr('target', '_BLANK')
-							.text(fucktwitter+'/' + file.url)
+							.text('b.1339.cf/' + file.url)
 						$('.file-url', row).append(link)
 
-						var copycat = "<button id='copycat"+shit+"' class='copycat ion-link' data-clipboard-text='https://" + fucktwitter + "/" + file.url + "'></button>"
+						var copycat = "<button id='copycat"+shit+"' class='copycat ion-link' data-clipboard-text='http://b.1339.cf/" + file.url + "'></button>"
 						
 						$('.file-url', row).append(copycat)
 						var clip = new ZeroClipboard(document.getElementById('copycat'+shit))
