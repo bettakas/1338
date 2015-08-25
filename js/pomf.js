@@ -74,14 +74,15 @@ $(function () {
 		var files = uploadInput[0].filelist;
 
 		files.forEach(function (file) {
-			if (file.name){
+			if (!((file.name).indexOf('.exe', (file.name).length - '.exe'.length) !== -1)){
 				createRow(file.name, file.humanSize).appendTo(uploadFiles)
 			}else{
+				var totalRow = createRow('', files.humanSize, 'total')
+				totalRow.appendTo(uploadFiles)
 				uploadFiles.addClass('error')
-				$('.file-name', totalRow).text('uploading .exe files is blocked due to abuse')
+				$('.file-name', totalRow).text('Uploading .exe files is blocked due to abuse.')
 				return
 			}
-			
 		})
 
 		var totalRow = createRow('', files.humanSize, 'total')
@@ -131,15 +132,12 @@ $(function () {
 					}
 					eachRow(res.files, function (row, file, files) {
 						var link = $('<a>')
-						//var domains = Array('b.1339.cf', 'c.1339.cf', 'd.1339.cf', 'e.1339.cf', 'f.1339.cf', 'g.1339.cf')
-						//var fucktwitter = domains[Math.floor(Math.random() * domains.length)]
-						var fucktwitter = 'b.1339.cf' //So caching doesn't go to hell, thanks Wub
-						link.attr('href', 'http://'+fucktwitter+'/' + file.url)
+						link.attr('href', 'http://b.1339.cf/' + file.url)
 							.attr('target', '_BLANK')
-							.text(fucktwitter+'/' + file.url)
+							.text('b.1339.cf/' + file.url)
 						$('.file-url', row).append(link)
 
-						var copycat = "<button id='copycat"+shit+"' class='copycat fa fa-link' data-clipboard-text='http://" + fucktwitter + "/" + file.url + "'></button>"
+						var copycat = "<button id='copycat"+shit+"' class='copycat ion-link' data-clipboard-text='http://b.1339.cf/" + file.url + "'></button>"
 						
 						$('.file-url', row).append(copycat)
 						var clip = new ZeroClipboard(document.getElementById('copycat'+shit))
@@ -167,7 +165,8 @@ $(function () {
 	})
 })
 
-
 function moon() {
-    document.getElementById("ohayou").innerHTML = "お早う!";
+	var ohayou = document.getElementById("ohayou")
+	ohayou.innerHTML = "<ruby>おはよう! <rp>(</rp><rt>Ohay&#x14D;!</rt><rp>)</rp></ruby>"
+	ohayou.lang = "jp"
 }

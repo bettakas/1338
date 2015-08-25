@@ -3,7 +3,7 @@
 	<span class="donate-btns">
 		<a class="donate-btn donate-bitcoin">
 			<span class="icon icon-bitcoin"></span>
-			d1c535cc91fb9bdb4287e90cd142c4891c778c8e
+			3NxDrGypxkvuLnsn6s6Taf9DNDV44199KA
 		</a>
 	</span>
 </p>

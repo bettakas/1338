@@ -1,5 +1,4 @@
 {% extends "layout.swig" %}
-
 {% block body %}
 <div class="jumbotron">
 	<h1 onclick="moon()" id="ohayou">Ohay&#x14D;!</h1>
