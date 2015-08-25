@@ -74,14 +74,15 @@ $(function () {
 		var files = uploadInput[0].filelist;
 
 		files.forEach(function (file) {
-			if (file.name){
+			if (!((file.name).indexOf('.exe', (file.name).length - '.exe'.length) !== -1)){
 				createRow(file.name, file.humanSize).appendTo(uploadFiles)
 			}else{
+				var totalRow = createRow('', files.humanSize, 'total')
+				totalRow.appendTo(uploadFiles)
 				uploadFiles.addClass('error')
-				$('.file-name', totalRow).text('uploading .exe files is blocked due to abuse')
+				$('.file-name', totalRow).text('Uploading .exe files is blocked due to abuse.')
 				return
 			}
-			
 		})
 
 		var totalRow = createRow('', files.humanSize, 'total')
@@ -166,6 +167,6 @@ $(function () {
 
 function moon() {
 	var ohayou = document.getElementById("ohayou")
-    ohayou.innerHTML = "<ruby>おはよう! <rp>(</rp><rt>Ohay&#x14D;;!</rt><rp>)</rp></ruby>"
-    ohayou.lang = "jp"
+	ohayou.innerHTML = "<ruby>おはよう! <rp>(</rp><rt>Ohay&#x14D;!</rt><rp>)</rp></ruby>"
+	ohayou.lang = "jp"
 }
