@@ -5,12 +5,10 @@ if (ini_get('zlib.output_compression') !== 'Off'
 	&& strpos($_SERVER["HTTP_ACCEPT_ENCODING"], 'gzip') !== false)
 	    ob_start("ob_gzhandler");
 
-session_start();
 include_once 'classes/Response.class.php';
 include_once 'classes/UploadException.class.php';
 include_once 'classes/UploadedFile.class.php';
 include_once 'includes/database.inc.php';
-
 
 /**
  * Generates a random name for the file, retrying until we get an unused one 
@@ -41,7 +39,7 @@ function generate_name ($file) {
 
 		$chars = 'abcdefghijklmnopqrstuvwxyz';
 		$name  = '';
-		for ($i = 0; $i < 7; $i++) {
+		for ($i = 0; $i < POMF_FILES_LENGTH; $i++) {
 			$name .= $chars[mt_rand(0, 25)];
 			// $chars string length is hardcoded, should use a variable to store it?
 		}
@@ -94,45 +92,52 @@ function upload_file ($file) {
 	// Generate a name for the file
 	$newname = generate_name($file);
 
-	// Attempt to move it to the static directory
-	if (move_uploaded_file($file->tempfile, POMF_FILES_ROOT . $newname)) {
-		// Need to change permissions for the new file to make it world readable
-		if (chmod(POMF_FILES_ROOT . $newname, 0644)) {
-			// Add it to the database
-			if (empty($_SESSION['id'])) {
-				// Query if user is NOT logged in
-				$q = $db->prepare('INSERT INTO files (hash, originalname, filename, size, date, ' .
-				                  'expire, delid) VALUES (:hash, :orig, :name, :size, :date, ' .
-				                  ':exp, :del)');
+	$blockedmimes = array ('application/x-msdownload', 'application/exe', 'application/octet-stream', 'application/x-msdos-program', 'application/msdos-windows', 'application/x-winexe', 'vms/exe', 'application/dos-exe', 'application/x-exe');
+	$finfo = finfo_open(FILEINFO_MIME_TYPE, '/usr/share/file/magic.mgc');
+	if (!(in_array(finfo_file($finfo, $file->tempfile), $blockedmimes))) {
+		// Attempt to move it to the static directory
+		if (move_uploaded_file($file->tempfile, POMF_FILES_ROOT . $newname)) {
+			// Need to change permissions for the new file to make it world readable
+			if (chmod(POMF_FILES_ROOT . $newname, 0640)) {
+				// Add it to the database
+				if (empty($_SESSION['id'])) {
+					// Query if user is NOT logged in
+					$q = $db->prepare('INSERT INTO files (hash, originalname, filename, size, date, ' .
+					                  'expire, delid) VALUES (:hash, :orig, :name, :size, :date, ' .
+					                  ':exp, :del)');
+				} else {
+					// Query if user is logged in (insert user id together with other data)
+					$q = $db->prepare('INSERT INTO files (hash, originalname, filename, size, date, ' .
+					                  'expire, delid, user) VALUES (:hash, :orig, :name, :size, ' .
+					                  ':date, :expires, :delid, :user)');
+					$q->bindValue(':user', $_SESSION['id'], PDO::PARAM_INT);
+				}
+
+				// Common parameters binding
+				$q->bindValue(':hash', $file->get_sha1(),       PDO::PARAM_STR);
+				$q->bindValue(':orig', strip_tags($file->name), PDO::PARAM_STR);
+				$q->bindValue(':name', $newname,                PDO::PARAM_STR);
+				$q->bindValue(':size', $file->size,             PDO::PARAM_INT);
+				$q->bindValue(':date', date('Y-m-d'),           PDO::PARAM_STR);
+				$q->bindValue(':exp',  null,                    PDO::PARAM_STR);
+				$q->bindValue(':del',  sha1($file->tempfile),   PDO::PARAM_STR);
+				$q->execute();
+
+				return array(
+					'hash' => $file->get_sha1(),
+					'name' => $file->name,
+					'url'  => $newname,
+					'size' => $file->size
+				);
 			} else {
-				// Query if user is logged in (insert user id together with other data)
-				$q = $db->prepare('INSERT INTO files (hash, originalname, filename, size, date, ' .
-				                  'expire, delid, user) VALUES (:hash, :orig, :name, :size, ' .
-				                  ':date, :expires, :delid, :user)');
-				$q->bindValue(':user', $_SESSION['id'], PDO::PARAM_INT);
+				throw new Exception('Failed to change file permissions', 500);
 			}
-
-			// Common parameters binding
-			$q->bindValue(':hash', $file->get_sha1(),       PDO::PARAM_STR);
-			$q->bindValue(':orig', strip_tags($file->name), PDO::PARAM_STR);
-			$q->bindValue(':name', $newname,                PDO::PARAM_STR);
-			$q->bindValue(':size', $file->size,             PDO::PARAM_INT);
-			$q->bindValue(':date', date('Y-m-d'),           PDO::PARAM_STR);
-			$q->bindValue(':exp',  null,                    PDO::PARAM_STR);
-			$q->bindValue(':del',  sha1($file->tempfile),   PDO::PARAM_STR);
-			$q->execute();
-
-			return array(
-				'hash' => $file->get_sha1(),
-				'name' => $file->name,
-				'url'  => $newname,
-				'size' => $file->size
-			);
 		} else {
-			throw new Exception('Failed to change file permissions', 500);
+			throw new Exception('Failed to move file to destination', 500);
 		}
 	} else {
-		throw new Exception('Failed to move file to destination', 500);
+		finfo_close($finfo);
+		throw new UploadException(UPLOAD_ERR_EXTENSION);
 	}
 }
 

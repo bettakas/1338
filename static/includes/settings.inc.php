@@ -13,6 +13,8 @@ define('POMF_FILES_ROOT', '/home/www-data/1338ul/');
 define('POMF_FILES_RETRIES', 15);
 // URL to prepend to output (include trailing slash)
 define('POMF_URL', 'https://b.1339.cf/');
+// Length of the uploaded filename
+define('POMF_FILES_LENGTH', 7);
 
 $doubledots = array_map('strrev', array(
 	'tar.gz',

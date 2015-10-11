@@ -1,5 +1,5 @@
 <p class="alert alert-info">
-	<strong>Donate via Bitcoin if you want to. The money goes into getting a new hoster.
+	<strong>Donate via Bitcoin if you want to.
 	<span class="donate-btns">
 		<a class="donate-btn donate-bitcoin">
 			<span class="icon icon-bitcoin"></span>

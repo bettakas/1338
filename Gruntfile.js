@@ -18,7 +18,8 @@ module.exports = function (grunt) {
 					'faq.swig',
 					'tools.swig',
 					'nav.swig',
-					'404.swig'
+					'404.swig',
+					'50x.swig'
 				],
 				siteUrl: 'http://1339.cf/',
 				production: false,
