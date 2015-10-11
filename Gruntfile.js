@@ -19,7 +19,8 @@ module.exports = function (grunt) {
 					'tools.swig',
 					'nav.swig',
 					'404.swig',
-					'50x.swig'
+					'50x.swig',
+					'donators.swig'
 				],
 				siteUrl: 'http://1339.cf/',
 				production: false,

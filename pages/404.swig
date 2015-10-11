@@ -13,5 +13,4 @@ Reasons for this could be
 </ul>
 <p>Questions? Go to <a href="http://1339.cf/faq.html">our info page</a> or back to <a href="http://1339.cf/">1339.cf</a></p>
 </ul>
-{% include "banners.swig" %}
 {% endblock %}
