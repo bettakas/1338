@@ -5,6 +5,10 @@
 <div class="jumbotron">
 <h1>Tools</h1>
 </div>
+<section><h1>ShareX</h1><dl>
+	<dt>Download</dt>
+		<dd><a href="/1339sharex.json">http://1339.cf/1339sharex.json</a></dd>
+</dl></section>
 <section><h1>limf</h1><dl>
 	<dt>Download</dt>
 		<dd><a href="https://github.com/lich/limf">https://github.com/lich/limf</a></dd>

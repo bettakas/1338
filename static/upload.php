@@ -92,12 +92,10 @@ function upload_file ($file) {
 	// Generate a name for the file
 	$newname = generate_name($file);
 
-	//$blockedmimes = array ('application/x-msdownload', 'application/exe', 'application/octet-stream', 'application/x-msdos-program', 'application/msdos-windows', 'application/x-winexe', 'vms/exe', 'application/dos-exe', 'application/x-exe');
-	//$finfo = finfo_open(FILEINFO_MIME_TYPE, '/usr/share/file/magic.mgc');
-
+	//Check if file starts with the magic number of windows executables, throw error if so
 	$openfile = fopen($file->tempfile, "r");
-	$kindofmagic =  bin2hex(fread($openfile,4));
-	if (!($kindofmagic == "4D5A")) {
+	$kindofmagic =  bin2hex(fread($openfile,2));
+	if (!($kindofmagic == "4d5a")) {
 		// Attempt to move it to the static directory
 		if (move_uploaded_file($file->tempfile, POMF_FILES_ROOT . $newname)) {
 			// Need to change permissions for the new file to make it world readable
