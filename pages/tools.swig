@@ -15,7 +15,7 @@
 	<dt>Download</dt>
 		<dd><a href="https://github.com/AdrianKoshka/1339secure">https://github.com/AdrianKoshka/1339secure</a></dd>
 	<dt>Contact</dt>
-		<dd><a href="mailto:adriankoshcha@teknik.io">adriankoshcha@teknik.io</a></dd>
+		<dd><a href="mailto:adriankoshka@openmailbox.org">adriankoshcha@openmailbox.org</a></dd>
 </dl></section>
 <section><h1>gyazowin</h1><dl>
 	<dt>Download</dt>
